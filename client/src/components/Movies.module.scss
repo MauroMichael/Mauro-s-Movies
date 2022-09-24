@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: white;
+    background: transparent;
+}
+
+.count {
+    background-color: black;
+    display: inline-block;
+    padding: 0.4%;
+    border-radius: 0.3rem;
+    margin-bottom: -1px;
+    color: white;
+}
+
+@media (max-width: 390px) {
+    .container {
+        padding: 4px;
+    }
+}

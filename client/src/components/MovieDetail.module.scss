@@ -1,0 +1,37 @@
+.container {
+    color: white;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 15px;
+    background-color: rgb(61, 58, 58, .9);
+    border-radius: 1rem;
+    border: black solid 5px;
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: row;
+    margin: 2% 5%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: left;
+    margin: 5%;
+}
+
+.prop {
+    font-weight: bolder;
+}
+
+.button {
+    margin-bottom: 2%;
+}
+
+@media (max-width: 390px) {
+    .detailContainer {
+        flex-direction: column;
+    }
+}

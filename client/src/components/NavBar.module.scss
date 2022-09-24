@@ -1,0 +1,80 @@
+.container {
+  background-color: yellow;
+  color: black;
+  border-radius: 1rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contents {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+.appName {
+  margin-left: 2%;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 178, 255, 1), 0 0 10px rgba(0, 178, 255, 1),
+    0 0 20px rgba(0, 178, 255, 1), 0 0 40px rgba(38, 104, 127, 1),
+    0 0 80px rgba(38, 104, 127, 1), 0 0 90px rgba(38, 104, 127, 1),
+    0 0 100px rgba(38, 104, 127, 1), 0 0 140px rgba(38, 104, 127, 1),
+    0 0 180px rgba(38, 104, 127, 1);
+}
+
+.about {
+  margin-right: 3%;
+  width: 102px;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.about,
+.favorites {
+  background-color: black;
+  border: 1px solid rgb(1, 1, 17);
+  border-radius: 0.2rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.about:focus,
+.about:hover {
+  background-color: #606c76;
+  border-color: #606c76;
+  outline: 0;
+}
+
+.favorites:focus,
+.favorites:hover {
+  background-color: #606c76;
+  border-color: #606c76;
+  outline: 0;
+}
+
+@media (max-width: 390px) {
+  .contents {
+    justify-content: center;
+    position: relative;
+    margin-top: -25px;
+  }
+  .about,
+  .favorites {
+    position: absolute;
+    bottom: 2px;
+    margin-left: 5%;
+  }
+  .about {
+    margin-left: -35%;
+  }
+  .appName {
+    font-size: 2rem;
+  }
+}
