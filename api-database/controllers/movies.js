@@ -79,7 +79,7 @@ const createFavorite = async (req, res) => {
     res.status(404).send(error);
   }
 
-  res.json("succeeded!");
+  res.json("succeeded!!");
 };
 
 const deleteFavorite = async (req, res) => {
