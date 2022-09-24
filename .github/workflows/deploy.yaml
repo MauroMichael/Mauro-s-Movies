@@ -1,7 +1,7 @@
 on:
   push:
     branches:
-      - main
+      - develop
 
 env:
   AZURE_WEBAPP_NAME: maurosmoviesapp   # set this to your application's name
