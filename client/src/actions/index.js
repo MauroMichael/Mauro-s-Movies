@@ -8,6 +8,7 @@ export const CLEAR_MOVIE_DETAIL = 'CLEAR_MOVIE_DETAIL';
 export const GET_FAVORITES = 'GET_FAVORITES';
 export const GET_SERIES = 'GET_SERIES';
 export const CLEAR_ELEMENTS = 'CLEAR_ELEMENTS';
+const URL_BACK = !'http://localhost:3001/'? 'https://maurosmoviesapp.azurewebsites.net/': 'http://localhost:3001/';
 
 
 export function addMovieFavorite(id, title) {
@@ -17,7 +18,7 @@ export function addMovieFavorite(id, title) {
         };
 
         let postFav = '';
-        fetch(`http://localhost:3001/${id}/${title}`, requestOptions)
+        fetch(`${URL_BACK}${id}/${title}`, requestOptions)
         .then(res => res.json())
         .then(data => {
             postFav = data;
@@ -68,7 +69,7 @@ export function addMovieFavorite(id, title) {
 
 export function getMovies(title) {
     return function(dispatch) {
-        return fetch(`http://localhost:3001/getmovies?title=${title}`)
+        return fetch(`${URL_BACK}getmovies?title=${title}`)
         .then(r => r.json())
         .then(json => {
             if(json.Response === 'False'){
@@ -102,7 +103,7 @@ export function getMovies(title) {
 
 export function getSeries(title) {
     return function(dispatch) {
-        return fetch(`http://localhost:3001/getseries?title=${title}`)
+        return fetch(`${URL_BACK}getseries?title=${title}`)
         .then(r => r.json())
         .then(json => { 
             if(json.Response === 'False'){
@@ -134,7 +135,7 @@ export function getSeries(title) {
 
 export function getMovieDetail(id) {
     return function(dispatch) {
-        return fetch(`http://localhost:3001/detail/${id}`)
+        return fetch(`${URL_BACK}detail/${id}`)
         .then(r => r.json())
         .then(json => {
             dispatch({type: GET_MOVIE_DETAIL,
@@ -165,7 +166,7 @@ export function removeMovieFavorite(id) {
         };
         
         let remFav = '';
-        fetch('http://localhost:3001/' + id, removeOptions)
+        fetch(`${URL_BACK}` + id, removeOptions)
         .then(r => r.json())
         .then(info => {
             remFav = info;
@@ -197,7 +198,7 @@ export function removeMovieFavorite(id) {
 
 export function getFavorites() {
     return function(dispatch) {
-        return fetch('http://localhost:3001/')
+        return fetch(`${URL_BACK}`)
         .then(r => r.json())
         .then(data => {               
             dispatch({type: GET_FAVORITES,
